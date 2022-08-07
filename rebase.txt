@@ -2,4 +2,4 @@ my branch
 A B
 
 his branch
-AA
+AA BB
