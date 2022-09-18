@@ -3,10 +3,12 @@
 name: CI
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+on: push
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ "main" ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -29,6 +31,24 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git clone https://Alonboa:$GITHUB_TOKEN@github.com/owner/github-actions-test # This works
+
+          cd github-actions-test
+          git config user.name "alonboa"
+          git config user.email "alon@boaideas.com"
+
+          git checkout -b test-action
+
+          touch new-file.sh
+          git add new-file.sh
+          git commit -m "Add new file"
+
+          git remote -v # Prints:
+          # origin ***github.com/owner/my-repo.git (fetch)
+          # origin ***github.com/owner/my-repo.git (push)
+
+          # git push --set-upstream origin api-version-$COMMIT # This does not work
+          git push --set-upstream https://Alonboa:$GITHUB_TOKEN@github.com/owner/github-actions-test test-action # This does not work either
