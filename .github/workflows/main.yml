@@ -49,4 +49,4 @@ jobs:
           # origin ***github.com/owner/my-repo.git (push)
 
           # git push --set-upstream origin api-version-$COMMIT # This does not work
-          git push --set-upstream https://Alonboa:$GITHUB_TOKEN@github.com/owner/github-actions-test test-action # This does not work either
+          git push --set-upstream https://Alonboa:$GITHUB_TOKEN@github.com/Alonboa/github-actions-test test-action # This does not work either
