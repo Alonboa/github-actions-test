@@ -44,7 +44,7 @@ jobs:
           # touch new-file.sh
 
           git remote add extension https://github.com/Alonboa/github-actions-test-2.git
-          git reset extension main
+          git reset extension/main
 
           git add .
           git commit -m "test action"
