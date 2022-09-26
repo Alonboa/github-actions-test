@@ -36,8 +36,8 @@ jobs:
           # git clone https://github.com/Alonboa/github-actions-test.git
  
           cd github-actions-test
-          git config user.name "alonboa"
-          git config user.email "alon@boaideas.com"
+          # git config user.name "alonboa"
+          # git config user.email "alon@boaideas.com"
 
           # git checkout -b test-action
   
