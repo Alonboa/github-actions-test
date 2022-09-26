@@ -47,7 +47,7 @@ jobs:
 
           git add .
           git commit -m "test action"
-
+ 
           git remote -v # Prints:
           # origin ***github.com/owner/my-repo.git (fetch)
           # origin ***github.com/owner/my-repo.git (push)
