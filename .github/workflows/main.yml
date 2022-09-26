@@ -32,7 +32,7 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git clone https://Alonboa:${{ secrets.repo_access }}@github.com/Alonboa/github-actions-test
+          git clone https://Alonboa:${{ secrets.REPO_ACCESS }}@github.com/Alonboa/github-actions-test
           # git clone https://github.com/Alonboa/github-actions-test.git
 
           cd github-actions-test
@@ -43,7 +43,7 @@ jobs:
   
           # touch new-file.sh
 
-          git remote add extension https://Alonboa:${{ secrets.repo_access }}@github.com/Alonboa/github-actions-test-2
+          git remote add extension https://Alonboa:${{ secrets.REPO_ACCESS }}@github.com/Alonboa/github-actions-test-2
           git fetch --all
           git reset extension/main
 
