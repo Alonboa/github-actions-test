@@ -34,7 +34,7 @@ jobs:
         run: |
           git clone https://Alonboa:${{ secrets.REPO_ACCESS }}@github.com/Alonboa/github-actions-test
           # git clone https://github.com/Alonboa/github-actions-test.git
-
+ 
           cd github-actions-test
           git config user.name "alonboa"
           git config user.email "alon@boaideas.com"
