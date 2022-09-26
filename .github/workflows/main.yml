@@ -32,7 +32,8 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git clone https://Alonboa:$GITHUB_TOKEN@github.com/Alonboa/github-actions-test # This works
+          # git clone https://Alonboa:$GITHUB_TOKEN@github.com/Alonboa/github-actions-test
+          git clone https://github.com/Alonboa/github-actions-test.git
 
           cd github-actions-test
           git config user.name "alonboa"
